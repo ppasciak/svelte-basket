@@ -1,0 +1,28 @@
+:global(button) {
+    color: $secondary;
+    background: #fff;
+    border: 1px solid $secondary;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        background: none;
+
+        &:after {
+            position: absolute;
+            content: '';
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background: $primary;
+            left: 10%;
+            right: 10%;
+        }
+    }
+}
+
+:global(button.square) {
+    aspect-ratio: 1 / 1;
+    width: 25px;
+}
