@@ -29,7 +29,7 @@
 
 {#if products && products.length}
     <ul class="product-list">
-        {#each products as prodcut}
+        {#each products as prodcut (prodcut.id)}
             <ProductItem {...prodcut}/>
         {/each}
     </ul>

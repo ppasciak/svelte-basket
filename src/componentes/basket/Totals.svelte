@@ -24,7 +24,7 @@
     }
 </script>
 
-{#if products}
+{#if products && products.length}
     <div class="totals">
         <h4>Summary:</h4>
         <div class="totals-grid">

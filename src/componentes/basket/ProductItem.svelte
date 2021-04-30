@@ -1,6 +1,7 @@
 <script>
     import QuantitySelector from './QuantitySelector.svelte'
     import {BasketStore} from '../../stores/basketStore' ;
+	import { fly } from 'svelte/transition';
 
     export let name;
     export let quantity;
@@ -35,7 +36,7 @@
 </script>
 
 
-<li class="product">
+<li class="product" out:fly={{x: 30, duration: 250}}>
     <div class="product__image">
         <img src={`../assets/products/${image}`} alt={name}>
     </div>
