@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import sveltePreprocess from 'svelte-preprocess';
+import scss from "rollup-plugin-scss";
 
 
 const production = !process.env.ROLLUP_WATCH;
@@ -46,10 +47,11 @@ export default {
 			},
 			preprocess: sveltePreprocess({
 				scss: {
-					prependData: `@import 'src/scss/main.scss';`
+					prependData: `@import 'src/scss/variables.scss';`
 				}
 			})
 		}),
+		scss(),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),

@@ -45,11 +45,19 @@
     .totals {
         padding: 20px;
         border: 1px solid $secondary;
+        @media only screen and (min-width: $srceen-m) {
+            margin: 20px 0;
+        }
 
         &-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-direction: column;
             
+            @media only screen and (min-width: $srceen-m) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             div {
                 padding: 10px;
             }

@@ -1,5 +1,6 @@
-:global(button) {
+button {
     color: $secondary;
+    font-family: 'Courier New', Courier, monospace;
     background: #fff;
     border: 1px solid $secondary;
     position: relative;
@@ -22,7 +23,7 @@
     }
 }
 
-:global(button.square) {
+button.square {
     aspect-ratio: 1 / 1;
     width: 25px;
 }

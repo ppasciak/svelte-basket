@@ -3,7 +3,7 @@
     import { BasketStore } from '../../stores/basketStore'
     import {fetchProducts} from '../../fetches/fetchProducts'
 
-    export let products;
+    let products;
     let promise;
 
     BasketStore.subscribe(store => products = store);

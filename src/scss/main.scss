@@ -1,4 +1,7 @@
-@import './reset.scss';
-@import './variables.scss';
-@import './typography.scss';
-@import './buttons.scss';
+:global{
+    @import './reset.scss';
+    @import './variables.scss';
+    @import './typography.scss';
+    @import './buttons.scss';
+}
+
