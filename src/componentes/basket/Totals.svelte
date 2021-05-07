@@ -1,10 +1,10 @@
 <script>
     import {BasketStore} from '../../stores/basketStore';
-
+    export let deliveryCost = undefined;
     let products;
     BasketStore.subscribe(data => products = data);
 
-    $: totals = calculateTotals(products);
+    $: totals = calculateTotals(products, deliveryCost);
 
     function calculateTotals(products) {
         let tempTotals = {
@@ -12,12 +12,15 @@
             price: 0,
             taxPrice: 0
         };
+        
         if(products) {
             products.forEach(el => {
-            tempTotals.qty += el.quantity;
-            tempTotals.price += el.price * el.quantity;
-            tempTotals.taxPrice += (el.price * el.quantity) * (1 + el.taxRate)
-        });
+                tempTotals.qty += el.quantity;
+                tempTotals.price += el.price * el.quantity;
+                tempTotals.taxPrice += (el.price * el.quantity) * (1 + el.taxRate)
+            });
+            tempTotals.price += parseFloat(deliveryCost) || 0;
+            tempTotals.taxPrice += parseFloat(deliveryCost) || 0;
         }
         
         return tempTotals;
@@ -37,6 +40,11 @@
             <div class="totals__tax-inc">
                 Taxes included: <span>{(totals.taxPrice).toFixed(2)} USD</span>
             </div>
+            {#if deliveryCost >= 0}
+                <div class="totals__delivery">
+                    Delivery: <span>{(deliveryCost).toFixed(2)} USD</span>
+                </div>
+            {/if}
         </div>
     </div>
 {/if}

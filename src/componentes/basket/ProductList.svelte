@@ -1,7 +1,7 @@
 <script>
     import ProductItem from './ProductItem.svelte';
     import { BasketStore } from '../../stores/basketStore'
-    import {fetchProducts} from '../../fetches/fetchProducts'
+    import {fetchProducts} from '../../fetches/fetchProducts';
 
     let products;
     let promise;

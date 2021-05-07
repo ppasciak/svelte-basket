@@ -6,9 +6,9 @@
   export let name;
   export let quantity;
   export let price;
-  export let taxRate;
   export let image;
   export let id;
+  export let taxRate;
 
   function handleQuantityChange(event) {
     let _id = event.detail.id;
@@ -34,7 +34,7 @@
   }
 </script>
 
-<li class="product" out:fly={{ x: 30, duration: 250 }}>
+<li class="product" out:fly|local={{ x: 30, duration: 250 }}>
   <div class="product__image">
     <img src={`../assets/products/${image}`} alt={name} />
   </div>
@@ -47,7 +47,10 @@
     />
   </div>
   <div class="product__price">
-    {price} <span class="prodcut__price__currency">USD</span>
+    <span> {price} <span class="prodcut__price__currency">USD</span></span>
+    <span class="product__price--tax-inc">
+      {(price * (1 + taxRate)).toFixed(2)} tax inc.
+    </span>
   </div>
   <div class="product__action">
     <button class="square remove" on:click={handleProductRemove}>X</button>
@@ -70,9 +73,9 @@
       grid-template-columns: 1fr 3fr repeat(3, 1fr);
       grid-template-rows: 1fr;
       grid-template-areas: "image name qty price action";
-      grid-gap: 5px;
+      grid-gap: 10px;
     }
-    
+
     &:not(&:last-of-type) {
       border-bottom: 1px solid $secondary;
     }
@@ -90,6 +93,14 @@
 
     &__price {
       grid-area: price;
+      display: flex;
+      flex-direction: column;
+
+      &--tax-inc {
+        color: var(--gray);
+        font-size: 0.75em;
+        width: 120px;
+      }
     }
 
     &__action {
@@ -104,9 +115,16 @@
 
     &__image {
       grid-area: image;
+      max-width: 90px;
+      justify-self: center;
+
+      @media only screen and (min-width: $srceen-m) {
+        max-width: none;
+      }
 
       img {
         max-width: 100%;
+        margin: 0 auto;
         display: block;
       }
     }

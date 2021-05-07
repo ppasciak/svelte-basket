@@ -1,6 +1,10 @@
 $gray: #333;
 $orange: #f77c09;
 $blue: #00b8ff;
+:root {
+    --primary: #{$blue};
+    --gray: #{$gray};
+}
 
 $primary: $blue;
 $secondary: $gray;

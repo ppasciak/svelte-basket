@@ -1,11 +1,12 @@
 <script>
     import {BasketStore} from '../../stores/basketStore'
-    
+    import {push} from 'svelte-spa-router';
+
     let products;
     BasketStore.subscribe(store =>  products = store);
     
     function handleSubmit() {
-        console.log(products)
+        push('/summary')
     }
 </script>
 
