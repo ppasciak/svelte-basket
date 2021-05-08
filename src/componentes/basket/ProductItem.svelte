@@ -36,7 +36,7 @@
 
 <li class="product" out:fly|local={{ x: 30, duration: 250 }}>
   <div class="product__image">
-    <img src={`../assets/products/${image}`} alt={name} />
+    <img src={`assets/products/${image}`} alt={name} />
   </div>
   <div class="product__name">{name}</div>
   <div class="product__qty">
