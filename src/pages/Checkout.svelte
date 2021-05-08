@@ -17,7 +17,6 @@
 	});
 
 	function handleFilledForm(e) {
-		console.log(e.detail.type)
 		filled[e.detail.type] = true;
 	}
 

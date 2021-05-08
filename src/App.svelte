@@ -3,7 +3,7 @@
 	import Router from 'svelte-spa-router';
 	import Basket from './pages/Basket.svelte';
 	import Home from './pages/Home.svelte';
-	import OrderSummary from './pages/OrderSummary.svelte';
+	import Checkout from './pages/Checkout.svelte';
 
 
 </script>
@@ -13,7 +13,7 @@
 		'/basket': Basket
 	}} />
 	<Router routes={{
-		'/summary': OrderSummary
+		'/summary': Checkout
 	}} />
 	<Router routes={{
 		'/': Home

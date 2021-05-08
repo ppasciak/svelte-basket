@@ -1,12 +1,16 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
   import { AddressStore } from "../../stores/addressStore";
 
   export let address;
   export let type;
-  let buttonDisabled = true;
+  let buttonDisabled = !checkFormValid();
 
   const dispatch = createEventDispatcher();
+
+  onMount(() => {
+	  buttonDisabled = !checkFormValid();
+	});
 
   function handleFormValueChanged(e) {
     AddressStore.update((store) => {
@@ -17,17 +21,23 @@
       return oldStore;
     });
 
-    updateSubmitButtonState(e);
+    updateSubmitButtonState();
   }
 
-  function updateSubmitButtonState(e) {
-    let form = e.target.parentElement;
-    console.log(form.checkValidity())
-    if (form.checkValidity()) {
+  function updateSubmitButtonState() {
+    if (checkFormValid()) {
       buttonDisabled = false;
     } else {
       buttonDisabled = true;
     }
+  }
+
+  function checkFormValid() {
+    let form = document.getElementById(`${type}-form`);
+    if (form) {
+      return form.checkValidity()
+    }
+    return false
   }
 
   function handleFormSubmited() {
@@ -40,6 +50,7 @@
 <form
   on:input={handleFormValueChanged}
   on:submit|preventDefault={handleFormSubmited}
+  id={`${type}-form`}
 >
   <label for={`${type}-firstName`}>Firstname: </label>
   <input
