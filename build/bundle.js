@@ -2468,28 +2468,28 @@ var app = (function () {
     			div4 = element("div");
     			button = element("button");
     			button.textContent = "X";
-    			if (img.src !== (img_src_value = `../assets/products/${/*image*/ ctx[3]}`)) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = `assets/products/${/*image*/ ctx[3]}`)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*name*/ ctx[0]);
     			attr_dev(img, "class", "svelte-191393z");
     			add_location(img, file$a, 38, 4, 1016);
     			attr_dev(div0, "class", "product__image svelte-191393z");
     			add_location(div0, file$a, 37, 2, 983);
     			attr_dev(div1, "class", "product__name svelte-191393z");
-    			add_location(div1, file$a, 40, 2, 1082);
+    			add_location(div1, file$a, 40, 2, 1079);
     			attr_dev(div2, "class", "product__qty svelte-191393z");
-    			add_location(div2, file$a, 41, 2, 1124);
+    			add_location(div2, file$a, 41, 2, 1121);
     			attr_dev(span0, "class", "prodcut__price__currency svelte-191393z");
-    			add_location(span0, file$a, 49, 19, 1314);
+    			add_location(span0, file$a, 49, 19, 1311);
     			attr_dev(span1, "class", "svelte-191393z");
-    			add_location(span1, file$a, 49, 4, 1299);
+    			add_location(span1, file$a, 49, 4, 1296);
     			attr_dev(span2, "class", "product__price--tax-inc svelte-191393z");
-    			add_location(span2, file$a, 50, 4, 1375);
+    			add_location(span2, file$a, 50, 4, 1372);
     			attr_dev(div3, "class", "product__price svelte-191393z");
-    			add_location(div3, file$a, 48, 2, 1266);
+    			add_location(div3, file$a, 48, 2, 1263);
     			attr_dev(button, "class", "square remove svelte-191393z");
-    			add_location(button, file$a, 55, 4, 1523);
+    			add_location(button, file$a, 55, 4, 1520);
     			attr_dev(div4, "class", "product__action svelte-191393z");
-    			add_location(div4, file$a, 54, 2, 1489);
+    			add_location(div4, file$a, 54, 2, 1486);
     			attr_dev(li, "class", "product svelte-191393z");
     			add_location(li, file$a, 36, 0, 919);
     		},
@@ -2527,7 +2527,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*image*/ 8 && img.src !== (img_src_value = `../assets/products/${/*image*/ ctx[3]}`)) {
+    			if (!current || dirty & /*image*/ 8 && img.src !== (img_src_value = `assets/products/${/*image*/ ctx[3]}`)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
