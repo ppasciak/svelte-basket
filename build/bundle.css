@@ -179,6 +179,34 @@ footer.svelte-13qh0a {
   --primary:#00b8ff;
   --gray:#333; }
 
+.totals.svelte-189u4v8.svelte-189u4v8 {
+  padding: 20px;
+  border: 1px solid #333; }
+
+@media only screen and (min-width: 767px) {
+  .totals.svelte-189u4v8.svelte-189u4v8 {
+    margin: 20px 0; } }
+
+.totals-grid.svelte-189u4v8.svelte-189u4v8 {
+  display: flex;
+  flex-direction: column; }
+
+@media only screen and (min-width: 767px) {
+  .totals-grid.svelte-189u4v8.svelte-189u4v8 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); } }
+
+.totals-grid.svelte-189u4v8 div.svelte-189u4v8 {
+  padding: 10px; }
+
+.totals-grid.svelte-189u4v8 span.svelte-189u4v8 {
+  display: block;
+  font-weight: 700; }
+
+:root {
+  --primary:#00b8ff;
+  --gray:#333; }
+
 .container.svelte-ifagkg.svelte-ifagkg {
   display: flex;
   flex-direction: column; }
@@ -207,34 +235,6 @@ button.svelte-966t1y {
 button.svelte-966t1y:hover:after {
   left: 5px;
   bottom: -5px; }
-
-:root {
-  --primary:#00b8ff;
-  --gray:#333; }
-
-.totals.svelte-189u4v8.svelte-189u4v8 {
-  padding: 20px;
-  border: 1px solid #333; }
-
-@media only screen and (min-width: 767px) {
-  .totals.svelte-189u4v8.svelte-189u4v8 {
-    margin: 20px 0; } }
-
-.totals-grid.svelte-189u4v8.svelte-189u4v8 {
-  display: flex;
-  flex-direction: column; }
-
-@media only screen and (min-width: 767px) {
-  .totals-grid.svelte-189u4v8.svelte-189u4v8 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); } }
-
-.totals-grid.svelte-189u4v8 div.svelte-189u4v8 {
-  padding: 10px; }
-
-.totals-grid.svelte-189u4v8 span.svelte-189u4v8 {
-  display: block;
-  font-weight: 700; }
 
 :root {
   --primary:#00b8ff;
@@ -286,25 +286,6 @@ input[type=radio].svelte-4v7l0w:checked ~ .radio-label.svelte-4v7l0w:after {
   top: 0;
   bottom: 0;
   margin: auto; }
-
-input.svelte-1k1rrua {
-  display: block;
-  border-radius: 0;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  width: 100%;
-  max-width: 320px;
-  border: 1px solid black; }
-
-label.svelte-1k1rrua {
-  display: block; }
-
-:root {
-  --primary:#00b8ff;
-  --gray:#333; }
-
-.address-preview.svelte-1q4a0lr {
-  padding: 10px 0; }
 
 :root {
   --primary:#00b8ff;
@@ -373,6 +354,25 @@ button.remove.svelte-191393z.svelte-191393z {
 
 button.remove.svelte-191393z.svelte-191393z:hover:after {
   background-color: #f77c09; }
+
+input.svelte-1k1rrua {
+  display: block;
+  border-radius: 0;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid black; }
+
+label.svelte-1k1rrua {
+  display: block; }
+
+:root {
+  --primary:#00b8ff;
+  --gray:#333; }
+
+.address-preview.svelte-1q4a0lr {
+  padding: 10px 0; }
 
 :root {
   --primary:#00b8ff;
