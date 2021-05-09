@@ -26,9 +26,3 @@
         {/if}
     </div>
 {/if}
-
-<style lang="scss">
-    .address-preview {
-        padding: 10px 0;
-    }
-</style>

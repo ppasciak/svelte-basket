@@ -53,6 +53,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    padding: 0;
 
     @media only screen and (min-width: $srceen-m) {
         flex-direction: row;
@@ -61,6 +62,10 @@
     .col-1,
     .col-2 {
       width: 100%;
+    }
+
+    .col-2 {
+      padding: 0 10px;
     }
   }
 </style>

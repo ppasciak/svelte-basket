@@ -12,16 +12,5 @@
 </main>
 
 <style>
-    .app {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .container {
-        max-width: 680px;
-        margin: 0 auto;
-        width: 100%;
-        padding: 0 10px;
-    }
 </style>

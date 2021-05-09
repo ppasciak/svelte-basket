@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 .highlighted {
     position: relative;
     display: inline-block;
+    z-index: 0;
 
     &::after {
         position: absolute;

@@ -1,0 +1,25 @@
+body[data-theme="dark"] {
+    .app {
+        background-color: $dark-bg;
+        color: white
+    }
+
+    input[type="text"] {
+        background: $dark-bg;
+        color: white
+    }
+
+    button,
+    input[type="submit"] {
+        border-color: white;
+
+        &:hover { 
+            color: white
+        }
+
+        &:disabled {
+            background: $gray;
+            color: white;
+        }
+    }
+}
