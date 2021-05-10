@@ -8,7 +8,6 @@ import sveltePreprocess from 'svelte-preprocess';
 import scss from "rollup-plugin-scss";
 import ghPages from 'gh-pages';
 
-
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
