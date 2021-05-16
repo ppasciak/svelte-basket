@@ -1,4 +1,3 @@
-<!-- loading.io  -->
 <div class="lds-ring">
   <div />
   <div />
