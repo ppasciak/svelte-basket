@@ -496,6 +496,18 @@ label.svelte-rbi9rx.svelte-rbi9rx:before {
   100% {
     transform: rotate(360deg); } }
 
+input.svelte-1k1rrua {
+  display: block;
+  border-radius: 0;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid black; }
+
+label.svelte-1k1rrua {
+  display: block; }
+
 :root {
   --primary:#00b8ff;
   --gray:#333; }
@@ -562,18 +574,6 @@ button.remove.svelte-1cebfrg.svelte-1cebfrg {
 
 button.remove.svelte-1cebfrg.svelte-1cebfrg:hover:after {
   background-color: #f77c09; }
-
-input.svelte-1k1rrua {
-  display: block;
-  border-radius: 0;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  width: 100%;
-  max-width: 320px;
-  border: 1px solid black; }
-
-label.svelte-1k1rrua {
-  display: block; }
 
 :root {
   --primary:#00b8ff;
