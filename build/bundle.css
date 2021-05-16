@@ -85,6 +85,47 @@ button.square {
   width: 100%;
   padding: 0 10px; }
 
+.checkbox-wrapper {
+  padding: 10px 0; }
+
+.checkbox-wrapper input[type=checkbox] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0; }
+
+.checkbox-wrapper input[type=checkbox] + label {
+  position: relative;
+  padding-left: 30px; }
+
+.checkbox-wrapper input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  height: 16px;
+  top: 0;
+  width: 16px;
+  background: transparent;
+  border: 1px solid #00b8ff;
+  z-index: 1;
+  left: 0; }
+
+.checkbox-wrapper input[type=checkbox]:checked + label:after {
+  background: #00b8ff; }
+
+.checkbox-wrapper input[type=checkbox]:checked + label:before {
+  content: "";
+  height: 11px;
+  position: absolute;
+  width: 4px;
+  top: 0;
+  background: none;
+  z-index: 6;
+  transform: rotate(45deg);
+  left: 6px;
+  top: 1px;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff; }
+
 body[data-theme=dark] .app {
   background-color: #666;
   color: white; }
@@ -184,6 +225,42 @@ body[data-theme=dark] button:disabled, body[data-theme=dark] input[type=submit]:
   width: 100%;
   padding: 0 10px; }
 
+:global .checkbox-wrapper {
+  padding: 10px 0; }
+  :global .checkbox-wrapper input[type=checkbox] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0; }
+    :global .checkbox-wrapper input[type=checkbox] + label {
+      position: relative;
+      padding-left: 30px; }
+      :global .checkbox-wrapper input[type=checkbox] + label:after {
+        content: '';
+        position: absolute;
+        height: 16px;
+        top: 0;
+        width: 16px;
+        background: transparent;
+        border: 1px solid #00b8ff;
+        z-index: 1;
+        left: 0; }
+    :global .checkbox-wrapper input[type=checkbox]:checked + label:after {
+      background: #00b8ff; }
+    :global .checkbox-wrapper input[type=checkbox]:checked + label:before {
+      content: '';
+      height: 11px;
+      position: absolute;
+      width: 4px;
+      top: 0;
+      background: none;
+      z-index: 6;
+      transform: rotate(45deg);
+      left: 6px;
+      top: 1px;
+      border-bottom: 2px solid #ffffff;
+      border-right: 2px solid #ffffff; }
+
 :global body[data-theme="dark"] .app {
   background-color: #666;
   color: white; }
@@ -237,24 +314,6 @@ footer.svelte-13qh0a {
   --primary:#00b8ff;
   --gray:#333; }
 
-.basket-actions.svelte-966t1y {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 0; }
-
-button.svelte-966t1y {
-  padding: 10px;
-  width: 100%;
-  max-width: 320px; }
-
-button.svelte-966t1y:hover:after {
-  left: 5px;
-  bottom: -5px; }
-
-:root {
-  --primary:#00b8ff;
-  --gray:#333; }
-
 .container.svelte-1pcpbmh.svelte-1pcpbmh {
   display: flex;
   flex-direction: column;
@@ -269,6 +328,24 @@ button.svelte-966t1y:hover:after {
 
 .container.svelte-1pcpbmh .col-2.svelte-1pcpbmh {
   padding: 0 10px; }
+
+:root {
+  --primary:#00b8ff;
+  --gray:#333; }
+
+.basket-actions.svelte-966t1y {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0; }
+
+button.svelte-966t1y {
+  padding: 10px;
+  width: 100%;
+  max-width: 320px; }
+
+button.svelte-966t1y:hover:after {
+  left: 5px;
+  bottom: -5px; }
 
 :root {
   --primary:#00b8ff;
@@ -385,6 +462,107 @@ label.svelte-rbi9rx.svelte-rbi9rx:before {
   left: 2px;
   transition: transform 0.25s ease-in-out, background-color 0.25s ease-in-out; }
 
+.lds-ring.svelte-cxw5sh.svelte-cxw5sh {
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  width: 80px;
+  height: 80px; }
+
+.lds-ring.svelte-cxw5sh div.svelte-cxw5sh {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid var(--primary);
+  border-radius: 50%;
+  animation: svelte-cxw5sh-lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--primary) transparent transparent transparent; }
+
+.lds-ring.svelte-cxw5sh div.svelte-cxw5sh:nth-child(1) {
+  animation-delay: -0.45s; }
+
+.lds-ring.svelte-cxw5sh div.svelte-cxw5sh:nth-child(2) {
+  animation-delay: -0.3s; }
+
+.lds-ring.svelte-cxw5sh div.svelte-cxw5sh:nth-child(3) {
+  animation-delay: -0.15s; }
+
+@keyframes svelte-cxw5sh-lds-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+:root {
+  --primary:#00b8ff;
+  --gray:#333; }
+
+.product.svelte-1cebfrg.svelte-1cebfrg {
+  display: grid;
+  align-items: center;
+  padding: 25px 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr;
+  grid-gap: 5px;
+  grid-template-areas: "image name name" "qty price action"; }
+
+@media only screen and (min-width: 767px) {
+  .product.svelte-1cebfrg.svelte-1cebfrg {
+    grid-template-columns: 1fr 3fr repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "image name qty price action";
+    grid-gap: 10px; } }
+
+.product.svelte-1cebfrg.svelte-1cebfrg:not(.product:last-of-type) {
+  border-bottom: 1px solid #333; }
+
+.product__qty.svelte-1cebfrg.svelte-1cebfrg, .product__price.svelte-1cebfrg.svelte-1cebfrg, .product__action.svelte-1cebfrg.svelte-1cebfrg {
+  text-align: center; }
+
+.product__qty.svelte-1cebfrg.svelte-1cebfrg {
+  grid-area: qty;
+  min-width: 100px; }
+
+.product__price.svelte-1cebfrg.svelte-1cebfrg {
+  grid-area: price;
+  display: flex;
+  flex-direction: column; }
+
+.product__price--tax-inc.svelte-1cebfrg.svelte-1cebfrg {
+  font-size: 0.75em;
+  width: 120px; }
+
+.product__action.svelte-1cebfrg.svelte-1cebfrg {
+  grid-area: action; }
+
+.product__name.svelte-1cebfrg.svelte-1cebfrg {
+  font-weight: 600;
+  padding: 0 10px;
+  grid-area: name; }
+
+.product__image.svelte-1cebfrg.svelte-1cebfrg {
+  grid-area: image;
+  max-width: 90px;
+  justify-self: center; }
+
+@media only screen and (min-width: 767px) {
+  .product__image.svelte-1cebfrg.svelte-1cebfrg {
+    max-width: none; } }
+
+.product__image.svelte-1cebfrg img.svelte-1cebfrg {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block; }
+
+button.remove.svelte-1cebfrg.svelte-1cebfrg {
+  background-color: #f77c09; }
+
+button.remove.svelte-1cebfrg.svelte-1cebfrg:hover:after {
+  background-color: #f77c09; }
+
 input.svelte-1k1rrua {
   display: block;
   border-radius: 0;
@@ -396,74 +574,6 @@ input.svelte-1k1rrua {
 
 label.svelte-1k1rrua {
   display: block; }
-
-:root {
-  --primary:#00b8ff;
-  --gray:#333; }
-
-.product.svelte-191393z.svelte-191393z {
-  display: grid;
-  align-items: center;
-  padding: 25px 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 2fr;
-  grid-gap: 5px;
-  grid-template-areas: "image name name" "qty price action"; }
-
-@media only screen and (min-width: 767px) {
-  .product.svelte-191393z.svelte-191393z {
-    grid-template-columns: 1fr 3fr repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-template-areas: "image name qty price action";
-    grid-gap: 10px; } }
-
-.product.svelte-191393z.svelte-191393z:not(.product:last-of-type) {
-  border-bottom: 1px solid #333; }
-
-.product__qty.svelte-191393z.svelte-191393z, .product__price.svelte-191393z.svelte-191393z, .product__action.svelte-191393z.svelte-191393z {
-  text-align: center; }
-
-.product__qty.svelte-191393z.svelte-191393z {
-  grid-area: qty;
-  min-width: 100px; }
-
-.product__price.svelte-191393z.svelte-191393z {
-  grid-area: price;
-  display: flex;
-  flex-direction: column; }
-
-.product__price--tax-inc.svelte-191393z.svelte-191393z {
-  color: var(--gray);
-  font-size: 0.75em;
-  width: 120px; }
-
-.product__action.svelte-191393z.svelte-191393z {
-  grid-area: action; }
-
-.product__name.svelte-191393z.svelte-191393z {
-  font-weight: 600;
-  padding: 0 10px;
-  grid-area: name; }
-
-.product__image.svelte-191393z.svelte-191393z {
-  grid-area: image;
-  max-width: 90px;
-  justify-self: center; }
-
-@media only screen and (min-width: 767px) {
-  .product__image.svelte-191393z.svelte-191393z {
-    max-width: none; } }
-
-.product__image.svelte-191393z img.svelte-191393z {
-  max-width: 100%;
-  margin: 0 auto;
-  display: block; }
-
-button.remove.svelte-191393z.svelte-191393z {
-  background-color: #f77c09; }
-
-button.remove.svelte-191393z.svelte-191393z:hover:after {
-  background-color: #f77c09; }
 
 :root {
   --primary:#00b8ff;
