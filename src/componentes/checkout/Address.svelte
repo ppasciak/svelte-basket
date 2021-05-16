@@ -7,6 +7,8 @@
 
   export let filled;
   export let type;
+
+  let duplicatedAddress = false;
   let update = false;
   let address = {
     firstName: "",
@@ -24,18 +26,38 @@
     update = false;
   }
 
+  function handleDuplicateAddress () {
+    if(duplicatedAddress) {
+      AddressStore.update((store) => {
+        let oldStore = store;
+        let shippingAddress = store['shipping'];
+        oldStore['billing'] = {...shippingAddress};
+
+        return oldStore;
+      })
+    }
+  }
+
   AddressStore.subscribe((store) => {
     address = store[type.toLowerCase()];
+    JSON.stringify(address) !== JSON.stringify(store['shipping']) ? duplicatedAddress = false : null;
   });
 
   function handleAddressUpdate() {
     update = !update;
+    duplicatedAddress = false
   }
 </script>
 
 <div class="container">
   {#if !filled || update}
     <div class="col-2" out:fly|local={{ x: -30, duration: 250 }}>
+      {#if type === 'Billing'}
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="same-as-shipping" bind:checked={duplicatedAddress} on:change={handleDuplicateAddress} />
+          <label for="same-as-shipping">Billing address same as shipping</label>
+        </div>
+      {/if}
       <AddressForm {type} {address} on:filled={handleFilledForm} />
     </div>
   {/if}

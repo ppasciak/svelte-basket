@@ -1,0 +1,48 @@
+.checkbox-wrapper {
+    padding: 10px 0;
+
+    input[type=checkbox] {
+        width: 0;
+        height: 0;
+        position: absolute;
+        opacity: 0;
+
+        & + label {
+            position: relative;
+            padding-left: 30px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                height: 16px;
+                top: 0;
+                width: 16px;
+                background: transparent;
+                border: 1px solid $primary;
+                z-index: 1;
+                left: 0;
+            }
+        }
+
+        &:checked + label{
+            &:after {
+                background: $primary;
+            }
+
+            &:before {
+                content: '';
+                height: 11px;
+                position: absolute;
+                width: 4px;
+                top: 0;
+                background: none;
+                z-index: 6;
+                transform: rotate(45deg);
+                left: 6px;
+                top: 1px;
+                border-bottom: 2px solid #ffffff;
+                border-right: 2px solid #ffffff;
+            }
+        }
+    }
+}

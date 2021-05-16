@@ -1,16 +1,21 @@
 <script>
-  import { createEventDispatcher, onMount } from "svelte";
+  import { createEventDispatcher, onMount, afterUpdate } from "svelte";
   import { AddressStore } from "../../stores/addressStore";
 
   export let address;
   export let type;
+
   let buttonDisabled = !checkFormValid();
 
   const dispatch = createEventDispatcher();
 
   onMount(() => {
-	  buttonDisabled = !checkFormValid();
+	  updateSubmitButtonState();
 	});
+
+  afterUpdate(() => {
+    updateSubmitButtonState();
+  })
 
   function handleFormValueChanged(e) {
     AddressStore.update((store) => {
@@ -25,11 +30,7 @@
   }
 
   function updateSubmitButtonState() {
-    if (checkFormValid()) {
-      buttonDisabled = false;
-    } else {
-      buttonDisabled = true;
-    }
+    buttonDisabled = !checkFormValid();
   }
 
   function checkFormValid() {

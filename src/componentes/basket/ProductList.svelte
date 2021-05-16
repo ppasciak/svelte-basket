@@ -1,13 +1,13 @@
 <script>
     import ProductItem from './ProductItem.svelte';
     import { BasketStore } from '../../stores/basketStore'
-    import {fetchProducts} from '../../fetches/fetchProducts';
+    import { fetchProducts } from '../../fetches/fetchProducts';
+    import Loader from '../Loader.svelte'
 
     let products;
     let promise;
 
     BasketStore.subscribe(store => products = store);
-
 
     async function handleGetCart() {
         promise = getProducts();
@@ -20,9 +20,8 @@
     }
 
 </script>
-
 {#await promise}
-    <p>waiting...</p>
+    <Loader />
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}

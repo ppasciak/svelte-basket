@@ -2,6 +2,7 @@
     import {fetchDeliveryMethods} from '../../fetches/fetchDeliveryMethods';
 	import { onMount } from 'svelte';
     import Totals from '../basket/Totals.svelte';
+    import Loader from '../Loader.svelte'
 
     let deliveryMethods;
     let selected;
@@ -26,7 +27,7 @@
         {/each}
     </form>
 {:else}
-    <p>...</p>
+    <Loader />
 {/if}
 <Totals deliveryCost={selected}/>
 

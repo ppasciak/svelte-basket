@@ -7,10 +7,12 @@
     const dispatch = createEventDispatcher();
 
     const handleDecrease = () => {
-        if(quantity > 0) {
+        if(quantity > 1) {
             quantity -= 1;
-        };
-        dispatch('quantityChange', {id, quantity})
+            dispatch('quantityChange', {id, quantity})
+        }else {
+            dispatch('remove', {id});
+        }
     }
 
     const handleIncrease = () => {

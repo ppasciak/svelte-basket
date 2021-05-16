@@ -39,7 +39,6 @@
                 background: white;
             }
         }
-
     }
 
     label {

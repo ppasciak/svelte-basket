@@ -42,6 +42,7 @@
   <div class="product__qty">
     <QuantitySelector
       on:quantityChange={handleQuantityChange}
+      on:remove={handleProductRemove}
       {quantity}
       {id}
     />
@@ -97,7 +98,6 @@
       flex-direction: column;
 
       &--tax-inc {
-        color: var(--gray);
         font-size: 0.75em;
         width: 120px;
       }
