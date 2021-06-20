@@ -2,6 +2,10 @@
   --primary:#00b8ff;
   --gray:#333; }
 
+:root {
+  --primary:#00b8ff;
+  --gray:#333; }
+
 body {
   padding: 0;
   margin: 0;
@@ -10,9 +14,9 @@ body {
 * {
   box-sizing: border-box; }
 
-:root {
-  --primary:#00b8ff;
-  --gray:#333; }
+::selection {
+  color: white;
+  background: #00b8ff; }
 
 a {
   color: #f77c09; }
@@ -144,6 +148,10 @@ body[data-theme=dark] button:disabled, body[data-theme=dark] input[type=submit]:
   background: #333;
   color: white; }
 
+:global :root {
+  --primary: #00b8ff;
+  --gray: #333; }
+
 :global body {
   padding: 0;
   margin: 0;
@@ -152,9 +160,9 @@ body[data-theme=dark] button:disabled, body[data-theme=dark] input[type=submit]:
 :global * {
   box-sizing: border-box; }
 
-:global :root {
-  --primary: #00b8ff;
-  --gray: #333; }
+:global ::selection {
+  color: white;
+  background: #00b8ff; }
 
 :global a {
   color: #f77c09; }
@@ -304,12 +312,6 @@ footer.svelte-13qh0a {
   justify-content: flex-end;
   height: 100%; }
 
-.product-list.svelte-1piv6w1 {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  padding-left: 0; }
-
 :root {
   --primary:#00b8ff;
   --gray:#333; }
@@ -327,6 +329,12 @@ button.svelte-966t1y {
 button.svelte-966t1y:hover:after {
   left: 5px;
   bottom: -5px; }
+
+.product-list.svelte-1piv6w1 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0; }
 
 :root {
   --primary:#00b8ff;
