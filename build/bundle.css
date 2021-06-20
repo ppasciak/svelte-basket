@@ -312,6 +312,12 @@ footer.svelte-13qh0a {
   justify-content: flex-end;
   height: 100%; }
 
+.product-list.svelte-1piv6w1 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0; }
+
 :root {
   --primary:#00b8ff;
   --gray:#333; }
@@ -329,12 +335,6 @@ button.svelte-966t1y {
 button.svelte-966t1y:hover:after {
   left: 5px;
   bottom: -5px; }
-
-.product-list.svelte-1piv6w1 {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  padding-left: 0; }
 
 :root {
   --primary:#00b8ff;
@@ -504,6 +504,18 @@ label.svelte-rbi9rx.svelte-rbi9rx:before {
   100% {
     transform: rotate(360deg); } }
 
+input.svelte-1k1rrua {
+  display: block;
+  border-radius: 0;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid black; }
+
+label.svelte-1k1rrua {
+  display: block; }
+
 :root {
   --primary:#00b8ff;
   --gray:#333; }
@@ -570,18 +582,6 @@ button.remove.svelte-1cebfrg.svelte-1cebfrg {
 
 button.remove.svelte-1cebfrg.svelte-1cebfrg:hover:after {
   background-color: #f77c09; }
-
-input.svelte-1k1rrua {
-  display: block;
-  border-radius: 0;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  width: 100%;
-  max-width: 320px;
-  border: 1px solid black; }
-
-label.svelte-1k1rrua {
-  display: block; }
 
 :root {
   --primary:#00b8ff;
